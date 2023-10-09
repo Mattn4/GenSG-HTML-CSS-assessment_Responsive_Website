@@ -39,30 +39,42 @@ nav.desktop li {
     padding-left: 16px;
 }
 
+nav.mobile {
+    display: none;
+}
+
+
 /* ----------------- Header section ----------------- */
+
 
 header {
     background-color: rgba(128, 128, 128, 0.362);
     width: 100%;
+    display: flex;
+    padding: 32px 24px;
+    align-items: center;
 }
 
-header.desktop {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    padding: 32px 24px;
+header .left {
+    width: 60%;
+    min-width: 300px;
+    flex-grow: 3;
 }
 
 header img {
     width: 100%;
     height: auto;
-    padding-right: 24px;
 }
 
-header div {
+header .right {
+    width: 40%;
+    min-width: 300px;
+    flex-grow: 2;
+    padding: 24px;
     align-self: center;
 }
 
-header button {
+button {
     width: 100%;
     background-color: #352F44;
     color: white;
@@ -71,7 +83,7 @@ header button {
     cursor: pointer;
 }
 
-header button:hover {
+button:hover {
     color: #352F44;
     font-weight: bold;
     background-color: rgb(193, 181, 181);
@@ -80,89 +92,50 @@ header button:hover {
 
 /* ----------------- Main section ----------------- */
 
-/* 
-.main {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    grid-template-rows: 1fr 1fr 1fr;
-}
-
-.main-left.info {
-    padding: 32px 24px;
-    grid-area: 1 / 1 / 3 / 2;
-}
-
-.main-left.practice {
-    padding: 0px 24px 32px 24px;
-    grid-area: 3 / 1 / span 1 / span 1;
-}
-
-.main-left img {
-    width: 100%;
-    height: auto;
-}
-
-.main-right {
-    display: grid;
-    grid-template-columns: 35% 65%;
-    align-items: center;
-    align-content: center;
-    border: 1px solid rgba(128, 128, 128, 0.362);
-    padding: 16px;
-}
-
-.main-right img {
-    width: 100%;
-    height: auto;
-}
-
-.main-right .text {
-    padding-left: 16px;
-}
-
-
-#orientation {
-    padding-top: 32px;
-}
- */
-
 .main {
     display: flex;
-    flex-wrap: wrap;   /* without this, desktop size can show 2 column */
     width: 100%;
 }
 
 .main .left {
-    flex-grow: 3;
+    width: 60%;
     min-width: 300px;
-}
-
-.main .right {
-    flex-grow: 2;
-    min-width: 200px;
+    padding: 32px 24px 32px 24px;
+    flex-grow: 3;
 }
 
 .main .left img {
-    padding: 32px 24px;
     width: 100%;
 }
 
-
-.practice {
-    padding: 0 24px 32px 24px;
+.main .right {
+    width: 40%;
+    min-width: 300px;
+    flex-grow: 2;
 }
 
 .practice h2 {
     margin-bottom: 24px;
 }
 
-.main .right .grid {
-    display: grid;
-    grid-template-columns: 35% 65%;
+.main .right .flex {
+    display: flex;
     align-items: center;
     align-content: center;
     padding: 16px;
     border: 1px solid rgba(128, 128, 128, 0.362);
+}
+
+.flex .pic {
+    width: 35%;
+    min-width: 160px;
+    flex-grow: 3.5;
+}
+
+.flex .text {
+    width: 65%;
+    min-width: 160px;
+    flex-grow: 6.5;
 }
 
 .main .right img {
@@ -175,14 +148,21 @@ header button:hover {
 }
 
 #orientation {
-    padding-top: 16px;
+    padding-top: 32px;
 }
+
+.mobile-image {
+    display: none;
+}
+
+
 
 /* ----------------- Start learning section ----------------- */
 
 .start-learning {
     background-color: rgba(128, 128, 128, 0.362);
     padding: 32px 72px;
+    width: 100%;
 }
 
 .start-learning h2 {
@@ -192,7 +172,7 @@ header button:hover {
 
 .course-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     grid-template-rows: 1fr 1fr;
     gap: 32px 32px;    
 }
@@ -205,8 +185,13 @@ header button:hover {
     width: 100%;
 }
 
-.course div {
+.course .text {
     padding: 16px 16px 24px 16px;
+}
+
+.description p {
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 /* ----------------- Thesis exhibit section ----------------- */
@@ -217,26 +202,34 @@ header button:hover {
     text-align: center;
 }
 
-.thesis-exhibit-grid{
-    display: grid;
-    grid-template-columns: 60% 40%;
+.thesis-exhibit-layout{
+    display: flex;
 }
 
-.thesis-exhibit-grid video {
+.thesis-exhibit-layout .left {
+    width: 60%;
+    min-width: 300px;
+    padding: 0 24px 32px 24px;
+    flex-grow: 3;
+}
+
+.thesis-exhibit-layout video {
     width: 100%;
 }
 
-.thesis-exhibit-grid .left {
-    padding: 0 24px 32px 24px;
+.thesis-exhibit-layout .right {
+    width: 40%;
+    min-width: 300px;
+    flex-grow: 2;
 }
 
-.thesis-exhibit-grid .right {
+.fisma, .now {
     display: grid;
     grid-template-columns: 35% 65%;    
     align-items: center;
 }
 
-.thesis-exhibit-grid .right img {
+.fisma img, .now img {
     height: auto;
     width: 100%;
     padding: 16px;
@@ -260,15 +253,10 @@ footer {
     padding-left: 16px;
 }
 
-/* Mobile size */
-
-.mobile {
-    display: none;
-}
 
 @media only screen and (max-width: 480px) {
-    
-/* ----------------- Navigation section ----------------- */
+
+    /* ----------------- Navigation section (mobile) ----------------- */
     nav.mobile {
         display: flex;
         justify-content: space-around;
@@ -278,44 +266,75 @@ footer {
         display: none;
     }
 
-/* ----------------- Header section ----------------- */
+    /* ----------------- Header section (mobile) ----------------- */
     
-    header.mobile {
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-    }    
-
-    header.mobile img {
+    header {
+        flex-wrap: wrap;
         padding: 0;
     }
    
-    header.mobile .right {
-        padding: 32px 16px;
+    /* ----------------- Main section (mobile) ----------------- */
 
-    }   
+    .main {
+        flex-wrap: wrap;
+    }
 
-    header.desktop {
+    .main .left, 
+    .desktop-image {
         display: none;
     }
 
-/* ----------------- Main section ----------------- */
+    .mobile-image {
+        display: inline-block;
+    }
 
+    .main .right .flex {
+        flex-wrap: wrap;
+    }
 
+    #orientation {
+        padding-top: 16px;
+    }
 
-/* ----------------- Start Learning section ----------------- */
+    /* ----------------- Start Learning section (mobile) ----------------- */
 
+    .start-learning {
+        background-color: white;
+        padding: 32px 16px;
+    }
 
+    .start-learning h2 {
+        margin-bottom: 16px;
+    }
 
-/* ----------------- Thesis Exhibit section ----------------- */
+    .course img,
+    .text .description {
+        display: none;
+    }
 
+    .course .text {
+        background-color: rgba(128, 128, 128, 0.362);
+        padding: 16px 16px 24px 16px;
+    }
 
+    .course-list {
+        gap: 16px 16px;    
+    }
 
-/* ----------------- Footer section ----------------- */
+    /* ----------------- Thesis Exhibit section (mobile) ----------------- */
+    .thesis-exhibit-layout{
+        flex-wrap: wrap;
+    }
+
+    .thesis-exhibit-layout .left .text, 
+    .thesis-exhibit-layout .right{
+        display: none;
+    }
+
+    /* ----------------- Footer section (mobile) ----------------- */
     .footer-list {
         display: none;
     }
-
-
 
 
 }
