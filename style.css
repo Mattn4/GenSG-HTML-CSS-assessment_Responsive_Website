@@ -37,7 +37,7 @@ nav img {
     margin-left: auto;
 }
 
-nav.desktop li {
+.navigation-list li {
     display: inline;
     padding-left: 16px;
 }
@@ -49,17 +49,17 @@ nav.mobile {
 
 /* ----------------- Header section ----------------- */
 
-
 header {
     background-color: rgba(160, 160, 160, 0.362);
     width: 100%;
     display: flex;
-    padding: 32px 24px;
+    flex-wrap: wrap;
     align-items: center;
 }
 
 header .left {
     width: 60%;
+    padding: 32px 24px;
     min-width: 300px;
     flex-grow: 3;
 }
@@ -71,17 +71,16 @@ header img {
 
 header .right {
     width: 40%;
+    padding: 32px 48px 32px 24px;
     min-width: 300px;
     flex-grow: 2;
-    padding: 24px;
     align-self: center;
 }
 
 header .right p {
-    margin-top: 24px;
+    margin-top: 32px;
     margin-bottom: 24px;
 }
-
 
 button {
     width: 100%;
@@ -101,14 +100,16 @@ button:hover {
 
 .main {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
 }
 
 .main .left {
     width: 60%;
     min-width: 300px;
-    padding: 32px 24px 32px 24px;
+    padding: 32px 24px;
     flex-grow: 3;
+    position: relative;
 }
 
 .main .left img {
@@ -122,6 +123,11 @@ button:hover {
 
 .practice p {
     margin-top: 24px ;
+}
+
+.quote-source {
+    position: absolute;
+    bottom: 32px;
 }
 
 .main .right {
@@ -148,14 +154,8 @@ button:hover {
 
 .flex .pic {
     width: 35%;
-    min-width: 160px;
+    min-width: 200px;
     flex-grow: 3.5;
-}
-
-.flex .text {
-    width: 65%;
-    min-width: 160px;
-    flex-grow: 6.5;
 }
 
 .flex img {
@@ -164,6 +164,9 @@ button:hover {
 }
 
 .flex .text {
+    width: 65%;
+    min-width: 100px;
+    flex-grow: 6.5;
     padding-left: 24px;
 }
 
@@ -195,7 +198,7 @@ button:hover {
 
 .course-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-rows: 1fr 1fr;
     gap: 32px 32px;    
 }
@@ -219,40 +222,41 @@ button:hover {
 
 /* ----------------- Thesis exhibit section ----------------- */
 
-.thesis-exhibit h2 {
+.thesis h2 {
     margin-top: 32px;
     margin-bottom: 32px;
     text-align: center;
 }
 
-.thesis-exhibit-layout{
+.thesis-layout{
     display: flex;
+    flex-wrap: wrap;
 }
 
-.thesis-exhibit-layout .left {
+.thesis-layout .left {
     width: 60%;
     min-width: 300px;
     padding: 0 24px 32px 24px;
     flex-grow: 3;
 }
 
-.thesis-exhibit-layout video {
+.thesis-layout video {
     width: 100%;
 }
 
-.thesis-exhibit-layout .left h3 {
+.thesis-layout .left h3 {
     margin-top: 24px;
     margin-bottom: 8px;
 } 
 
 
-.thesis-exhibit-layout .right {
+.thesis-layout .right {
     width: 40%;
     min-width: 300px;
     flex-grow: 2;
 }
 
-.thesis-exhibit-layout .right p {
+.thesis-layout .right p {
     margin-top: 16px;
 }
 
@@ -265,7 +269,6 @@ button:hover {
 .fisma:hover, .now:hover {
     background-color: rgba(160, 160, 160, 0.362);
 }
-
 
 .fisma img, .now img {
     height: auto;
@@ -292,7 +295,7 @@ footer {
 }
 
 
-@media only screen and (max-width: 480px) {
+@media (max-width: 600px) {
 
     /* ----------------- Navigation section (mobile) ----------------- */
     nav.mobile {
@@ -305,17 +308,17 @@ footer {
     }
 
     /* ----------------- Header section (mobile) ----------------- */
-    
-    header {
-        flex-wrap: wrap;
+
+    header .left {
         padding: 0;
     }
+
+    header .right {
+        padding: 32px 16px;
+    }
+    
    
     /* ----------------- Main section (mobile) ----------------- */
-
-    .main {
-        flex-wrap: wrap;
-    }
 
     .main .left, 
     .desktop-image {
@@ -329,6 +332,7 @@ footer {
     .flex {
         flex-wrap: wrap;
         border: none;
+        padding-bottom: 32px;
     }
 
     .flex h3 {
@@ -336,6 +340,7 @@ footer {
     }
 
     .flex .text {
+        padding-left: 16px;
         padding-right: 16px;
     }
 
@@ -348,6 +353,8 @@ footer {
     .start-learning {
         background-color: white;
         padding: 32px 16px;
+        border-top: 1px solid rgba(160, 160, 160, 0.362);
+        border-bottom: 1px solid rgba(160, 160, 160, 0.362);
     }
 
     .start-learning h2 {
@@ -369,16 +376,13 @@ footer {
     }
 
     /* ----------------- Thesis Exhibit section (mobile) ----------------- */
-    .thesis-exhibit-layout{
-        flex-wrap: wrap;
-    }
 
-    .thesis-exhibit-layout .left .text, 
-    .thesis-exhibit-layout .right{
+    .thesis-layout .left .text, 
+    .thesis-layout .right{
         display: none;
     }
 
-    .thesis-exhibit h2 {
+    .thesis h2 {
         margin-bottom: 16px;
     }
 
