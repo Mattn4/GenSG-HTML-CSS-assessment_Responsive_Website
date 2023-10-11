@@ -109,7 +109,6 @@ button:hover {
     min-width: 300px;
     padding: 32px 24px;
     flex-grow: 3;
-    position: relative;
 }
 
 .main .left img {
@@ -125,11 +124,6 @@ button:hover {
     margin-top: 24px ;
 }
 
-.quote-source {
-    position: absolute;
-    bottom: 32px;
-}
-
 .main .right {
     width: 40%;
     min-width: 300px;
@@ -138,6 +132,7 @@ button:hover {
 
 .flex {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     align-content: center;
     padding: 16px;
@@ -154,7 +149,6 @@ button:hover {
 
 .flex .pic {
     width: 35%;
-    min-width: 200px;
     flex-grow: 3.5;
 }
 
@@ -165,7 +159,6 @@ button:hover {
 
 .flex .text {
     width: 65%;
-    min-width: 100px;
     flex-grow: 6.5;
     padding-left: 24px;
 }
@@ -317,7 +310,6 @@ footer {
         padding: 32px 16px;
     }
     
-   
     /* ----------------- Main section (mobile) ----------------- */
 
     .main .left, 
@@ -330,13 +322,16 @@ footer {
     }
 
     .flex {
-        flex-wrap: wrap;
         border: none;
         padding-bottom: 32px;
     }
 
     .flex h3 {
         margin-top: 16px;
+    }
+
+    .flex .pic {
+        min-width: 200px;
     }
 
     .flex .text {
@@ -390,6 +385,5 @@ footer {
     .footer-list {
         display: none;
     }
-
 
 }
